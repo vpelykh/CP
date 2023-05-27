@@ -88,11 +88,12 @@ public class Lab2 {
             case 4:
                 System.out.println("Enter n");
                 a_num = scan.nextDouble();
-                sum = 1;
+                sum = 1.0;
                 n = 1;
 
                 while (a_num >= sum) {
-                    sum += (double) 1 / n;
+                    sum += ((double) 1) / n ;
+                    n++;
                 }
 
                 System.out.println("Result: " + sum);
