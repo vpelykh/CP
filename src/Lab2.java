@@ -70,7 +70,7 @@ public class Lab2 {
                     res3[i] = a + previous;
                     previous = a;
 
-                    res4 += (-1 * (i % 2)) * a;
+                    res4 += (-1 + ((i + 1) % 2 * 2)) * a;
                 }
 
 
