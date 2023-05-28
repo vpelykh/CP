@@ -10,6 +10,7 @@ public class Polygon extends Applet implements Runnable {
             { 0, 76, 76, 124, 200, 152, 200, 124, 76, 76 };
     private boolean isRunning = false;
     private Color c = Color.GREEN;
+    int i = 0;
 
     public void start() {
         thread = new Thread(this);
@@ -25,6 +26,7 @@ public class Polygon extends Applet implements Runnable {
     public void run() {
         while (isRunning) {
             repaint();
+            i += 10;
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
@@ -37,10 +39,12 @@ public class Polygon extends Applet implements Runnable {
     public void paint(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(c);
+
+
+        g2d.rotate(Math.toRadians(10 + i), 176, 200);
         g2d.fillPolygon(starx, stary, starx.length);
         g2d.setColor(Color.BLACK);
         g2d.drawPolygon(starx, stary, starx.length);
-        g2d.rotate(Math.toRadians(5), 112, 0);
     }
 
     public static void main(String[] args) {
